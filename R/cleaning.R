@@ -16,11 +16,11 @@
 library(tidyverse)
 library(lubridate)
 
-read_data <- function(path = 'EQdata.tsv') {
+eq_read_data <- function(path = 'EQdata.tsv') {
   data.frame(read.table(file = 'EQdata.tsv', sep = '\t', header=T))
 }
 
-clean_data <- function(data) {
+eq_clean_data <- function(data) {
   data <- data %>% select(Year, Mo, Dy, Location.Name, Mag, Latitude, Longitude, Deaths) %>%
           drop_na()
 
