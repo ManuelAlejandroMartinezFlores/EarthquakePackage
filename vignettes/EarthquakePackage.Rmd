@@ -72,7 +72,7 @@ random to show the information about the location)
 
 
 ```{r, fig.cap = "Time lines of earthquakes in Greece, Italy and Portugal, from 1900 to date. For each earthquake, the point size is proportional with intensity, colour gradient is proportional with total number of death."}
-noaa %>%
+read_data() %>%
     eq_clean_data() %>%
     dplyr::filter(
         country %in% c("ITALY", "GREECE", "PORTUGAL"),
@@ -94,7 +94,7 @@ Using the funciton `eq_map()` we can also show an interactive map of earthquakes
 present) about location, magnitude and total death of each earthquakes.
 
 ```{r}
-noaa %>%
+read_data() %>%
     eq_clean_data %>%
     dplyr::filter(
         country == "MEXICO",
